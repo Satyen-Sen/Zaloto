@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Zaloto/static/css/main.6d7b677a.css",
+    "main.js": "/Zaloto/static/js/main.75d565ca.js",
+    "static/media/meals.jpg": "/Zaloto/static/media/meals.2971f633fc1382581cbf.jpg",
+    "index.html": "/Zaloto/index.html",
+    "main.6d7b677a.css.map": "/Zaloto/static/css/main.6d7b677a.css.map",
+    "main.75d565ca.js.map": "/Zaloto/static/js/main.75d565ca.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6d7b677a.css",
+    "static/js/main.75d565ca.js"
+  ]
+}
