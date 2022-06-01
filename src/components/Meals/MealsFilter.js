@@ -7,8 +7,8 @@ function MealsFilter(props) {
     }; 
 
     return (
-        <div className='expenses-filter'> 
-            <div className='expenses-filter__control'>
+        <div className='meals-filter'> 
+            <div className='meals-filter__control'>
                 <label>Filter by Type</label> 
                 <select value={props.selected} onChange={dropdownChangeHandler}>
                     <option value='All'>All</option>

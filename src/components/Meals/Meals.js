@@ -6,6 +6,7 @@ import AvailableMeals from './AvailableMeals';
 import MealsFilter from './MealsFilter';
 
 const Meals = (props) => {
+
   return (
     <Fragment>
       <MealsSummary />

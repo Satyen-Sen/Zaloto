@@ -2,7 +2,7 @@ import Card from '../UI/Card';
 import MealItem from './MealItem/MealItem';
 import classes from './AvailableMeals.module.css';
 
-const DUMMY_MEALS = [
+const DummyMeals = [
   {
     id: '01',
     name: 'Sushi',
@@ -146,8 +146,12 @@ const DUMMY_MEALS = [
   
 ];
 
+let vegMeals = DummyMeals.filter(function (meals) {
+  return meals.category === 'Veg'; 
+} );
+
 const AvailableMeals = () => {
-  const mealsList = DUMMY_MEALS.map((meal) => (
+  const mealsList = vegMeals.map((meal) => (
     <MealItem
       key={meal.id}
       id={meal.id}
@@ -158,6 +162,7 @@ const AvailableMeals = () => {
     />
   ));
 
+ 
   return (
     <section className={classes.meals}>
       <Card>
