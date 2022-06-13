@@ -18,13 +18,13 @@
     margin: 1rem 2rem;
   }
   
-  .expenses-filter label {
+  .meals-filter label {
     font-weight: bold;
     font-size: larger;
     margin-bottom: 0.5rem;
   }
   
-  .expenses-filter select {
+  .meals-filter select {
     font: inherit;
     padding: 0.2rem 1rem;
     width: 200px;

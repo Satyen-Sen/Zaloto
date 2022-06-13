@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import Card from '../UI/Card';
 import MealItem from './MealItem/MealItem';
 import classes from './AvailableMeals.module.css';
@@ -143,30 +144,52 @@ const DummyMeals = [
     price: 18.99,
     category: 'Veg',
   },
-  
 ];
 
-let vegMeals = DummyMeals.filter(function (meals) {
-  return meals.category === 'Veg'; 
-} );
 
-const AvailableMeals = () => {
-  const mealsList = vegMeals.map((meal) => (
-    <MealItem
-      key={meal.id}
-      id={meal.id}
-      name={meal.name}
-      description={meal.description}
-      price={meal.price}
-      category={meal.category}
-    />
-  ));
 
+const AvailableMeals = (props) => {
+
+  const [Meals, setMeals] = useState([]); 
+
+  const returnMeals = () => {
+    if (props.filterValue === 'All') {
+      setMeals(DummyMeals)
+    } else if(props.filterValue === "Veg") {
+      setMeals(DummyMeals.filter((item) => item.category === "Veg"))
+    }else if (props.filterValue === "NonVeg") {
+      setMeals(DummyMeals.filter((item) => item.category === "Non-Veg"))
+    }
+    setMeals(DummyMeals)
+  }
+
+
+  useEffect(() => { 
+    returnMeals()
+  
+  },[])
+
+  useEffect(() => {
+    returnMeals()
+  },[props.filterValue])
  
   return (
     <section className={classes.meals}>
       <Card>
-        <ul>{mealsList}</ul>
+        <ul>
+          {
+            Meals && Meals.map((meal) => (
+              <MealItem
+                key={meal.id}
+                id={meal.id}
+                name={meal.name}
+                description={meal.description}
+                price={meal.price}
+                category={meal.category}
+              />
+            ))
+          }
+        </ul>
       </Card>
     </section>
   );
